@@ -1,0 +1,25 @@
+#nav-title{
+    padding: 0 17% 0 15%;
+    font-weight: bold;
+    font-size: 4.25vmin;
+    color: rgb(255, 209, 81);
+}
+.nav-link{
+    font-size: 2.75vmin;
+    margin: 0 10px;
+}
+#nav-link-1:hover, #nav-link-2:hover, #nav-link-3:hover, #nav-link-4:hover, #nav-link-5:hover{
+    color: rgb(255, 209, 81);
+}
+
+@media only screen and (max-width: 900px){
+    #nav-title{
+        font-weight: bold;
+        font-size: 5vmin;
+        padding: 0;
+    }
+    .nav-link{
+        text-align: center;
+        font-size: 3.5vmin;
+    }
+}

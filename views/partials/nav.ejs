@@ -1,14 +1,17 @@
-<nav>
-    <div class="site-title">
-        <a href="/"><h1>AB Bank</h1></a>
-        <p>A Heroku Site</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a id="nav-title" class="navbar-brand" href="/">AB Bank</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div id="navbar-nav" class="navbar-nav">
+        <a id="nav-link-1" class="nav-link active" aria-current="page" href="/">Home</a>
+        <a id="nav-link-2" class="nav-link active" href="/transfer">Transfer</a>
+        <a id="nav-link-3" class="nav-link active" href="/customers">Customers</a>
+        <a id="nav-link-4" class="nav-link active" href="/transaction-history">Transaction History</a>
+        <a id="nav-link-5" class="nav-link active" href="/about">About</a>
+      </div>
     </div>
-
-    <ul>
-        <li><a href="/customers">Customers</a></li>
-        <li><a href="/transfer">Transfer</a></li>
-        <li><a href="/transaction-history">Transaction History</a></li>
-        <li><a href="/customers/create">Create New User</a></li>
-        <li><a href="/about">About</a></li>
-    </ul>
+  </div>
 </nav>
