@@ -57,7 +57,7 @@ app.post('/customers', (req, res) => {
     const customer = new Customer(req.body);
     customer.save()
         .then((result) => {
-            res.redirect('/customers')
+            res.render('update', {title: 'Transaction Status', status: 3})
         })
         .catch((err) => {
             console.log(err)
@@ -84,27 +84,34 @@ app.get('/transfer', (req, res) => {
 // saving the transaction to db
 app.post('/transfer', (req, res) => {
     const transaction = new Transaction(req.body)
-    
-    // Updating the customers database
-    // The sender
-    Customer.findOneAndUpdate({ id: transaction.sender_id }, { $inc: { 'balance': -transaction.amount }})
-        .catch((err) => {
-            console.log(err)
-        });
-    // The recipient
-    Customer.findOneAndUpdate({ id: transaction.recipient_id }, { $inc: { 'balance': transaction.amount }})
-        .catch((err) => {
-            console.log(err)
-        });
-
-    transaction.save()
+    // Checking if balance is insufficient
+    Customer.findOne({ id: transaction.sender_id })
         .then((result) => {
-            // console.log(result)
-            res.redirect('/customers')
+            if (transaction.amount > result.balance){
+                res.render('update', {title: 'Transaction Status', status: 1});
+            } 
+            else{
+                // Updating the customers database
+                // The sender
+                Customer.findOneAndUpdate({ id: transaction.sender_id }, { $inc: { 'balance': -transaction.amount }})
+                    .catch((err) => {
+                        console.log(err)
+                    });
+                // The recipient
+                Customer.findOneAndUpdate({ id: transaction.recipient_id }, { $inc: { 'balance': transaction.amount }})
+                    .catch((err) => {
+                        console.log(err)
+                    });
+
+                transaction.save()
+                    .then((result) => {
+                        res.render('update', {title: 'Transaction Status', status: 2});
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    });
+            }
         })
-        .catch((err) => {
-            console.log(err)
-        });
 })
 
 

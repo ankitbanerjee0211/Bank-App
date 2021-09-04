@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs')  %> 
+<body>
+
+    <!-- Navbar -->
+    <%- include('./partials/nav.ejs')  %> 
+
+    <div class="index content">
+        <h2>Transaction Status</h2>
+    </div>
+
+    <% if (status == 1){ %>
+        <h3>Transaction failed due to insufficient account balance.</h3>
+    <% } else if (status == 2){ %> 
+        <h3>Transfer successful.</h3>
+    <% } else { %> 
+        <h3>New Account opened successfullly.</h3>
+    <% } %> 
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs')  %> 
+</body>
+</html>

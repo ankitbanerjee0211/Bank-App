@@ -1,0 +1,73 @@
+.form-heading{
+    font-weight: bold;
+    text-align: center;
+    padding: 3vmin 0;
+    font-size: 5vmin;
+    border-bottom: 2px solid rgb(255, 209, 81);
+    border-top: 2px solid rgb(255, 209, 81);
+    margin: 5vmin auto;
+    width: 80%;
+}
+
+.form{
+    margin: 2vmin auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-container label{
+    padding: 2vmin 0 0 0;
+    margin: 1vmin 0 0 0;
+    font-weight: bold;
+    font-size: 2.5vmin;
+    color: rgb(73, 73, 73);
+}
+
+.form-container input{
+    padding: 1.2vmin 1vmin;
+    font-size: 2vmin;
+    margin: .75vmin 0 0 0;
+    outline: none;
+}
+.form-container input:focus{
+    box-shadow: 0 0 12px 1.25px rgb(255, 209, 81);
+}
+
+.form-container button{
+    padding: 1vmin;
+    font-weight: bold;
+    outline: none;
+    width: 50%;
+    font-size: 2.5vmin;
+}
+.submit{
+    border-top: .5px solid black;
+    border-right: .5px solid black;
+    border-bottom: .5px solid black;
+    border-left: 0;
+    border-radius: 0 1vmin 1vmin 0;
+}
+.reset{
+    border-top: .5px solid black;
+    border-left: .5px solid black;
+    border-bottom: .5px solid black;
+    border-right: 0;
+    border-radius: 1vmin 0 0 1vmin;
+}
+.submit:hover{
+    background-color: green;
+    color: blanchedalmond;
+}
+.reset:hover{
+    background-color: red;
+    color: azure;
+}
+.btn-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4vmin 0;
+}

@@ -1,0 +1,18 @@
+.about{
+    width: 80%;
+    margin: auto;
+}
+.about h2{
+    font-weight: bold;
+    text-align: center;
+    padding: 3vmin 0;
+    font-size: 5vmin;
+    border-bottom: 2px solid rgb(255, 209, 81);
+    border-top: 2px solid rgb(255, 209, 81);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vmin;
+    margin-bottom: 3vmin;
+    width: 80%;
+}

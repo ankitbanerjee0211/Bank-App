@@ -8,18 +8,28 @@
     <%- include('./partials/nav.ejs')  %> 
     <% let serial = 1 %> 
 
-    <div class="transaction-history content">
+    <div class="table-container">
         <h2>All Transactions</h2>
-
-        <% if (transactions.length > 0) { %>
-            <% transactions.forEach(transaction => { %>
-                <h1><%= serial.toString() %></h1>
-                <p><%= transaction.sender_name %>(ID: <%= transaction.sender_id %>)   =>   <%= transaction.recipient_name %>(ID: <%= transaction.recipient_id %>)_______________________<strong><%= transaction.amount %> INR</strong></p>
-                <pre>Time: <%= transaction.createdAt %></pre>
-            <% serial = serial + 1 }) %>
-        <% } else { %>
-            <h3>No transactions till now :(</h3>
-        <% } %> 
+        <ul class="responsive-table">
+            <li class="table-header">
+                <div class="col col-1">Serial No.</div>
+                <div class="col col-2">Sender Name and Id</div>
+                <div class="col col-3">Recipient Name and Id</div>
+                <div class="col col-4">Amount and Transaction Time</div>
+            </li>
+            <% if (transactions.length > 0) { %>
+                <% transactions.forEach(transaction => { %>
+                    <li class="table-row">
+                        <div class="col col-1" data-label="Serial No."><%= serial.toString() %></div>
+                        <div class="col col-2" data-label="Sender Name and Id"><%= transaction.sender_id %> - <%= transaction.sender_name %></div>
+                        <div class="col col-3" data-label="Recipient Name and Id"><%= transaction.recipient_id %> - <%= transaction.recipient_name %></div>
+                        <div class="col col-4" data-label="Amount and Transaction Time"><i class="fa fa-inr"></i><%= transaction.amount %><br><%= transaction.createdAt %></div>
+                    </li>
+                <% serial = serial + 1 }) %>
+            <% } else { %>
+                <h3>No transactions till now :(</h3>
+            <% } %> 
+        </ul>
     </div>
 
     <!-- Footer -->

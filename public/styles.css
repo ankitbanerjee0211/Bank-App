@@ -4,4 +4,73 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Noto Serif', serif;
+    text-decoration: none;
+}
+
+.content{
+    width: 80%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 900px) {
+    .content{
+        width: 95%;
+        margin: auto;
+    }
+}
+
+body{
+    background-color: rgb(255, 217, 217);
+    padding-bottom: 7vmin;
+}
+
+/* Homepage */
+
+.homepage-title{
+    width: 85%;
+    margin: 5vmin auto;
+}
+.homepage-title h2{
+    font-weight: bold;
+    text-align: center;
+    padding: 3vmin 0;
+    font-size: 5vmin;
+    border-bottom: 2px solid rgb(255, 209, 81);
+    border-top: 2px solid rgb(255, 209, 81);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 3vmin;
+}
+.homepage-title h3{
+    font-weight: normal;
+    font-size: 4vmin;
+    color: rgb(65, 65, 65);
+    margin: 7vmin 0 3vmin 0;
+}
+.home-btn-container{
+    margin: auto;
+    text-align: center;
+}
+.home-btn{
+    padding: .5vmin 2vmin;
+    font-size: 3vmin;
+    outline: none;
+    border-radius: 1vmin;
+    margin: 2vmin;
+    font-weight: bold;
+}
+.home-btn a{
+    text-decoration: none;
+    color: black;
+}
+.home-btn a:hover{
+    color: rgb(255, 209, 81);
+    transition: 500ms;
+}
+.home-btn:hover{
+    background-color: black;
+    transition: 500ms;
 }

@@ -10,6 +10,7 @@
     padding: 6px;
     border-top: 1px solid white;
     opacity: 0.8;
+    border-top: 2px solid rgb(255, 197, 121);
 }
 #footer a{
     text-decoration: none;

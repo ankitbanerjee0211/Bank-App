@@ -5,23 +5,26 @@
 <body>
     <!-- Navbar -->
     <%- include('./partials/nav.ejs') %> 
-
-    <h1>Transfer Money</h1>
-
-    <div class="transfer-form content">
-        <form action="/transfer" method="POST">
-            <label for="sender_id">ID: </label>
-            <input type="text" name="sender_id" id="sender_id" placeholder="Enter your ID" required><br>
-            <label for="sender_name">Name: </label>
-            <input type="text" name="sender_name" id="sender_name" placeholder="Enter your name" required><br>
-            <label for="recipient_id">Recipient's ID: </label>
-            <input type="text" name="recipient_id" id="recipient_id" placeholder="Enter recipient's ID" required><br>
-            <label for="recipient_name">Recipient's Name: </label>
-            <input type="text" name="recipient_name" id="recipient_name" placeholder="Enter recipient's Name" required><br>
-            <label for="amount">Amount: </label>
-            <input type="number" name="amount" id="amount" placeholder="Enter amount" required><br>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="content">
+        <h2 class="form-heading">Transfer Money</h2>
+        <div class="form-container">
+            <form class="form" action="/transfer" method="POST">
+                <label for="sender_id">ID: </label>
+                <input type="text" name="sender_id" id="sender_id" placeholder="Enter your ID" required>
+                <label for="sender_name">Name: </label>
+                <input type="text" name="sender_name" id="sender_name" placeholder="Enter your name" required>
+                <label for="recipient_id">Recipient's ID: </label>
+                <input type="text" name="recipient_id" id="recipient_id" placeholder="Enter recipient's ID" required>
+                <label for="recipient_name">Recipient's Name: </label>
+                <input type="text" name="recipient_name" id="recipient_name" placeholder="Enter recipient's Name" required>
+                <label for="amount">Amount: </label>
+                <input type="number" name="amount" id="amount" placeholder="Enter amount" required>
+                <div class="btn-container">
+                    <button class="reset" type="reset">Reset</button>
+                    <button class="submit" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- Footer -->

@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
-<%- include('./partials/head.ejs')  %> 
-<body>
+<%- include('./partials/head.ejs') %>
 
-    <!-- Navbar -->
-    <%- include('./partials/nav.ejs')  %> 
+    <body>
 
-    <div class="blogs content">
-        <h2>All Customers</h2>
+        <!-- Navbar -->
+        <%- include('./partials/nav.ejs') %>
 
-        <% if (customers.length > 0) { %>
-            <% customers.forEach(customer => { %>
-                <a class="single" href="/customers/<%= customer.id %>">
-                    <h3 class="id">ID: <%= customer.id %> </h3>
-                    <p class="name"><%= customer.name %></p>
-                    <p class="email"><%= customer.email %></p>
-                    <p class="balance">Account Balance: <%= customer.balance %></p>
-                </a>
-            <% }) %>
-        <% } else { %>
-            <h3>No customers till now :(</h3>
-        <% } %> 
-    </div>
+        <div class="table-container">
+            <h2>All Customers</h2>
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-1">Id</div>
+                    <div class="col col-2">Customer Name</div>
+                    <div class="col col-3">Email</div>
+                    <div class="col col-4">Balance</div>
+                </li>
+                <% if (customers.length> 0) { %>
+                    <% customers.forEach(customer=> { %>
+                        <a class="single" href="/customers/<%= customer.id %>">
+                            <li class="table-row">
+                                <div class="col col-1" data-label="Id"><%= customer.id %></div>
+                                <div class="col col-2" data-label="Customer Name"><%= customer.name %></div>
+                                <div class="col col-3" data-label="Email"><%= customer.email %></div>
+                                <div class="col col-4" data-label="Balance"><%= customer.balance %></div>
+                            </li>
+                        </a>
+                    <% }) %>
+                <% } else { %>
+                    <h3>No customers till now :(</h3>
+                <% } %>
+            </ul>
+        </div>
 
-    <!-- Footer -->
-    <%- include('./partials/footer.ejs')  %> 
-</body>
+        <!-- Footer -->
+        <%- include('./partials/footer.ejs') %>
+    </body>
+
 </html>
