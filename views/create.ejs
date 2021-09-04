@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs')  %> 
+<body>
+    <!-- Navbar -->
+    <%- include('./partials/nav.ejs')  %> 
+
+    <div class="create-blog content">
+        <form action="/customers" method="POST">
+            <label for="id">ID: </label>
+            <input type="text" name="id" id="id" required>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" required>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" required>
+            <label for="balance">Initial Deposit: </label>
+            <input type="number" name="balance" id="balance" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs')  %> 
+</body>
+</html>

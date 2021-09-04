@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs')  %> 
+<body>
+
+    <!-- Navbar -->
+    <%- include('./partials/nav.ejs')  %> 
+
+    <div class="details content">
+        <h2>ID: <%= customer.id %></h2>
+        <div class="content">
+            <p><%= customer.name %></p>
+            <p><%= customer.email %></p>
+            <p><%= customer.balance %></p>
+        </div>
+        <a class="delete" data-doc="<%= customer._id %>">Delete</a>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs')  %> 
+
+    <!-- Frontend Script -->
+    <script>
+        // This script tag is running on browser
+        // Frontend javascript this is
+        const trashcan = document.querySelector('a.delete');
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/customers/${trashcan.dataset.doc}`;
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+                .then((response) => response.json()) //response.json parses the json data back to js
+                .then((data) => window.location.href = data.redirect)
+                .catch(err => console.log(err));
+        })
+    </script>
+</body>
+</html>

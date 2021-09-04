@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs')  %> 
+<body>
+
+    <!-- Navbar -->
+    <%- include('./partials/nav.ejs')  %> 
+
+    <div class="blogs content">
+        <h2>All Customers</h2>
+
+        <% if (customers.length > 0) { %>
+            <% customers.forEach(customer => { %>
+                <a class="single" href="/customers/<%= customer.id %>">
+                    <h3 class="id">ID: <%= customer.id %> </h3>
+                    <p class="name"><%= customer.name %></p>
+                    <p class="email"><%= customer.email %></p>
+                    <p class="balance">Account Balance: <%= customer.balance %></p>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <h3>No customers till now :(</h3>
+        <% } %> 
+    </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs')  %> 
+</body>
+</html>

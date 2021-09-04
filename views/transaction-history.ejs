@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs')  %> 
+<body>
+
+    <!-- Navbar -->
+    <%- include('./partials/nav.ejs')  %> 
+    <% let serial = 1 %> 
+
+    <div class="transaction-history content">
+        <h2>All Transactions</h2>
+
+        <% if (transactions.length > 0) { %>
+            <% transactions.forEach(transaction => { %>
+                <h1><%= serial.toString() %></h1>
+                <p><%= transaction.sender_name %>(ID: <%= transaction.sender_id %>)   =>   <%= transaction.recipient_name %>(ID: <%= transaction.recipient_id %>)_______________________<strong><%= transaction.amount %> INR</strong></p>
+                <pre>Time: <%= transaction.createdAt %></pre>
+            <% serial = serial + 1 }) %>
+        <% } else { %>
+            <h3>No transactions till now :(</h3>
+        <% } %> 
+    </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs')  %> 
+</body>
+</html>
