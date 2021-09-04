@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 // Including mongoose schema
 const Customer = require('./models/customer');
-const Transaction = require('./models/Transaction');
+const Transaction = require('./models/transaction');
 
 // Including ejs
 const { render } = require('ejs');
