@@ -1,0 +1,24 @@
+/* FOOTER */
+#footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-shadow: none;
+    color: azure;
+    background-color: black;
+    text-align: center;
+    padding: 6px;
+    border-top: 1px solid white;
+    opacity: 0.8;
+}
+#footer a{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(255, 197, 121);
+}
+
+@media only screen and (max-width: 600px){
+    #footer{
+        font-size: 13px;
+    }
+}
