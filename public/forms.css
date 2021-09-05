@@ -71,3 +71,19 @@
     justify-content: center;
     margin: 4vmin 0;
 }
+
+@media only screen and (max-width: 900px) {
+    .form-container label{
+        font-size: 3.75vmin;
+    }
+    
+    .form-container input{
+        padding: 1.5vmin 1.25vmin;
+        font-size: 3vmin;
+    }
+
+    .form-container button{
+        padding: 1.5vmin;
+        font-size: 3.5vmin;
+    }
+}
