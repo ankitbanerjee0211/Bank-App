@@ -6,15 +6,22 @@
 
     <!-- Navbar -->
     <%- include('./partials/nav.ejs')  %> 
-
-    <div class="details content">
-        <h2>ID: <%= customer.id %></h2>
-        <div class="content">
-            <p><%= customer.name %></p>
-            <p><%= customer.email %></p>
-            <p><%= customer.balance %></p>
-        </div>
-        <a class="delete" data-doc="<%= customer._id %>">Delete</a>
+    <div class="table-container">
+        <h2>Customer with Id: <%= customer.id %></h2>
+        <ul class="responsive-table">
+            <li class="table-header">
+                <div class="col col-1">Customer Name</div>
+                <div class="col col-2">Email</div>
+                <div class="col col-3">Balance</div>
+                <div class="col col-4">Actions</div>
+            </li>
+            <li class="table-row">
+                <div class="col col-1" data-label="Customer Name"><%= customer.name %></div>
+                <div class="col col-2" data-label="Email"><%= customer.email %></div>
+                <div class="col col-3" data-label="Balance"><%= customer.balance %></div>
+                <div class="col col-4" data-label="Actions"><a class="delete" data-doc="<%= customer._id %>">Delete</a></div>
+            </li>
+        </ul>
     </div>
 
     <!-- Footer -->

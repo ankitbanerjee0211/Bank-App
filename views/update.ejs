@@ -7,17 +7,20 @@
     <!-- Navbar -->
     <%- include('./partials/nav.ejs')  %> 
 
-    <div class="index content">
+    <div class="update content">
         <h2>Transaction Status</h2>
+        <% if (status == 1){ %>
+            <h3>Transaction failed due to insufficient account balance.</h3>
+        <% } else if (status == 2){ %> 
+            <h3>Transfer successful.</h3>
+            <br>
+            <h3>Thank you for using our services.</h3>
+        <% } else { %> 
+            <h3>New Account opened successfully.</h3>
+            <br>
+            <h3>Thank you for choosing us.</h3>
+        <% } %> 
     </div>
-
-    <% if (status == 1){ %>
-        <h3>Transaction failed due to insufficient account balance.</h3>
-    <% } else if (status == 2){ %> 
-        <h3>Transfer successful.</h3>
-    <% } else { %> 
-        <h3>New Account opened successfullly.</h3>
-    <% } %> 
 
     <!-- Footer -->
     <%- include('./partials/footer.ejs')  %> 
