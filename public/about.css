@@ -1,6 +1,7 @@
 .about{
     width: 80%;
     margin: auto;
+    margin-bottom: 8vmin;
 }
 .about h2{
     font-weight: bold;
@@ -13,6 +14,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vmin;
-    margin-bottom: 14vmin;
+    margin-bottom: 5vmin;
     width: 80%;
 }
