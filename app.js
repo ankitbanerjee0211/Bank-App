@@ -78,7 +78,7 @@ app.get('/customers', (req, res) => {
 
 // Transfer Money
 app.get('/transfer', (req, res) => {
-    res.render('transfer', {title: 'Transfer Money'});
+    res.render('transfer', {title: 'Transfer Money', status: 10});
 })
 
 // saving the transaction to db
@@ -89,6 +89,15 @@ app.post('/transfer', (req, res) => {
         .then((result) => {
             if (transaction.amount > result.balance){
                 res.render('update', {title: 'Transaction Status', status: 1});
+            } 
+            else if ((transaction.sender_name != result.name) && (transaction.sender_id == transaction.recipient_id || (transaction.sender_name == transaction.recipient_name && transaction.sender_id == transaction.recipient_id))){
+                res.render('transfer', {title: 'Transfer Money', status: 6});
+            } 
+            else if (transaction.sender_id == transaction.recipient_id || (transaction.sender_name == transaction.recipient_name && transaction.sender_id == transaction.recipient_id)){
+                res.render('transfer', {title: 'Transfer Money', status: 4});
+            } 
+            else if (transaction.sender_name != result.name){
+                res.render('transfer', {title: 'Transfer Money', status: 5});
             } 
             else{
                 // Updating the customers database
