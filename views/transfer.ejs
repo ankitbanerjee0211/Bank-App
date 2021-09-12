@@ -12,6 +12,10 @@
             <div id="same" class="alert alert-danger" role="alert">
                 Sender and recipient can't be same
             </div>
+        <% } else if (status == 1){ %> 
+            <div id="insuf_bal" class="alert alert-danger" role="alert">
+                Transaction failed due to insufficient account balance
+            </div>
         <% } else if (status == 5){ %> 
             <div id="name_incorrect" class="alert alert-danger" role="alert">
                 Please input the names correctly
@@ -23,26 +27,29 @@
             <div id="name_incorrect" class="alert alert-danger" role="alert">
                 Please input the names correctly
             </div>
+        <% } else if (status == 7) { %>
+            <div id="wrong" class="alert alert-danger" role="alert">
+                Invalid input
+            </div>
         <% } %>
-        </div>
-        <div class="form-container">
-            <form class="form" action="/transfer" method="POST">
-                <label for="sender_id">ID: </label>
-                <input type="text" name="sender_id" id="sender_id" placeholder="Enter your ID" required>
-                <label for="sender_name">Name: </label>
-                <input type="text" name="sender_name" id="sender_name" placeholder="Enter your name" required>
-                <label for="recipient_id">Recipient's ID: </label>
-                <input type="text" name="recipient_id" id="recipient_id" placeholder="Enter recipient's ID" required>
-                <label for="recipient_name">Recipient's Name: </label>
-                <input type="text" name="recipient_name" id="recipient_name" placeholder="Enter recipient's Name" required>
-                <label for="amount">Amount: </label>
-                <input type="number" name="amount" id="amount" placeholder="Enter amount" required>
-                <div class="btn-container">
-                    <button class="reset" type="reset">Reset</button>
-                    <button class="submit" type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
+    </div>
+    <div class="form-container">
+        <form class="form" action="/transfer" method="POST">
+            <label for="sender_id">ID: </label>
+            <input type="text" name="sender_id" id="sender_id" placeholder="Enter your ID" required>
+            <label for="sender_name">Name: </label>
+            <input type="text" name="sender_name" id="sender_name" placeholder="Enter your name" required>
+            <label for="recipient_id">Recipient's ID: </label>
+            <input type="text" name="recipient_id" id="recipient_id" placeholder="Enter recipient's ID" required>
+            <label for="recipient_name">Recipient's Name: </label>
+            <input type="text" name="recipient_name" id="recipient_name" placeholder="Enter recipient's Name" required>
+            <label for="amount">Amount: </label>
+            <input type="number" name="amount" id="amount" placeholder="Enter amount" required>
+            <div class="btn-container">
+                <button class="reset" type="reset">Reset</button>
+                <button class="submit" type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 
     <!-- Footer -->
