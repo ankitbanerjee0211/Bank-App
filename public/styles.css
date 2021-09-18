@@ -102,6 +102,7 @@ body{
     margin-bottom: 3vmin;
 }
 .update h3{
+    margin: auto;
     padding: 3vmin 0;
     font-size: 4vmin;
     width: 95%;
