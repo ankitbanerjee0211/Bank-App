@@ -17,7 +17,7 @@ const { render } = require('ejs');
 const app = express();
 
 // Database connection
-const dbURI = 'mongodb+srv://ankit:ankit12345@bank-app.qnla8.mongodb.net/bankDataBase?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://ankit:ankit12345@bank-app.qnla8.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => app.listen(process.env.PORT || 80))
     .catch((err) => console.log(err));
